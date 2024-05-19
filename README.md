@@ -1,3 +1,6 @@
+# My Snowflake Arctic Application
+fixme: below starter code
+
 # 🤖❄️ Snowflake Arctic Chatbot
 This Streamlit app is not just any chatbot; it's your starter kit to play with Snowflake's brand new foundation model: Snowflake Arctic! Arctic was released on April 24, 2024 and is completely open-source 😍
 
