@@ -34,7 +34,6 @@ for message in st.session_state.messages:
 def clear_chat_history():
     st.session_state.messages = [{"role": "assistant", "content": "Hi. I'm Arctic, a new, efficient, intelligent, and truly open language model created by Snowflake AI Research. I'll teach you about the world. Ask me anything."}]
 
-
 @st.cache_resource(show_spinner=False)
 def get_tokenizer():
     """Get a tokenizer to make sure we're not sending too much text
@@ -89,8 +88,6 @@ def handle_user_input(input_text):
                 full_response = st.write_stream(response)
             message = {"role": "assistant", "content": full_response}
             st.session_state.messages.append(message)
-
-st.sidebar.button('Clear chat history', on_click=clear_chat_history, type="primary")
 
 region_country_dict = {
     "Africa":[
@@ -338,6 +335,8 @@ region_country_dict = {
     ],
 }
 
+st.sidebar.button('Clear chat history', on_click=clear_chat_history, type="primary")
+
 region = st.sidebar.selectbox(
    "Select Region (optional)",
    list(region_country_dict),
@@ -360,3 +359,6 @@ if country and st.sidebar.button(f'Plan a itinerary in {country} :airplane:'):
 
 if user_input:
     handle_user_input(user_input)
+
+st.sidebar.subheader("About")
+st.sidebar.caption("This app makes you feel like traveling around the world, using [Snowflake Arctic](https://www.snowflake.com/blog/arctic-open-and-efficient-foundation-language-models-snowflake) model. App hosted on [Streamlit Community Cloud](https://streamlit.io/cloud). Model hosted by [Replicate](https://replicate.com/snowflake/snowflake-arctic-instruct).")

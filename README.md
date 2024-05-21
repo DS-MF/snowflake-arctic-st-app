@@ -1,14 +1,31 @@
-# My Snowflake Arctic Application
-fixme: below starter code
+# World Travel App
+App URL: https://world-travel.streamlit.app/
 
-# 🤖❄️ Snowflake Arctic Chatbot
-This Streamlit app is not just any chatbot; it's your starter kit to play with Snowflake's brand new foundation model: Snowflake Arctic! Arctic was released on April 24, 2024 and is completely open-source 😍
+![World Travel App](World-Travel-App-Screenshot.png)
 
-Get the full lowdown on Arctic in Adrien Treuille's [blog post](http://blog.streamlit.io/introducing-snowflake-arctic/). Snowflake Arctic is also available via [Hugging Face](https://huggingface.co/Snowflake/snowflake-arctic-instruct) 🤗 and all your favorite model gardens soon! 🔜
+This app makes you feel like traveling around the world, using [Snowflake Arctic](https://www.snowflake.com/blog/arctic-open-and-efficient-foundation-language-models-snowflake) model.
 
-Built a cool Streamlit app using Arctic? Share it on social media with #SnowflakeArctic! We'll repost you 🫡
+## What can this app do?
+1. It tells you about the features of countries all over the world.
+2. It suggests 1 week itinerary for that country.
+3. It answers anything else you ask.
 
-![Streamlit app chatbot for Snowflake Arctic](Streamlit-Arctic-Screenshot.png)
+### Select country
+You can select `Region` and `Country` from the side bar.  
+If you choose `Region`, you can select `Country` in that region.  
+If you don't choose `Region`, you can select `Country` from all.
+
+### Press button
+After you select `Country`, you will be able to use 2 buttons.
+1. `Learn about Country` button  
+   App tells you about the features of that country.
+2. `Plan a itinerary` button  
+   App suggests 1 week itinerary in that country as table.
+
+Also you can use `Clear chat history` button.  
+Unless you push the clear button, the chat history will be saved, allowing you to ask additional questions from the text field.
+
+# (For developer) How to build this app
 
 ## Getting your own Replicate API token
 
@@ -25,7 +42,7 @@ After creating a Replicate account, you can access your API token from [this pag
 ### Installation
 1. **Clone this repository**
    ```bash
-   git clone https://github.com/yourusername/snowflake-arctic-chatbot.git
+   git clone https://github.com/DS-MF/snowflake-arctic-st-app.git
    cd snowflake-arctic-chatbot
    ```
 
@@ -51,18 +68,10 @@ Create a `.streamlit` folder with a `secrets.toml` file inside.
    Alternatively, you can enter your Replicate API token via the `st.text_input` widget in the app itself (once you're running the app).
 
 4. **Run the Streamlit app**
-Note: there are two versions of the app included in this repo. `simple_app.py` is a simpler app which passes user input to Arctic and returns Arctic's response. `streamlit_app.py` has built-in guardrails, meaning that it checks user input to ensure queries are safe (i.e. users are not asking Arctic for instructions on how to commit illegal activity, etc.).
-
-To run the version of the app that includes guardrails, enter:
+To run this app, enter:
    ```bash
    cd ..
-   streamlit run streamlit_app.py
-   ```
-
-To run the simpler version of the app, enter:
-   ```bash
-   cd ..
-   streamlit run simple_app.py
+   streamlit run travel_app.py
    ```
 
 ### Deployment
@@ -89,6 +98,3 @@ Securely store your Replicate API token with Community Cloud's secrets managemen
 3. Click "Settings".  
 4. A modal will appear. Click "Secrets" on the left.  
 5. After you edit your secrets, click "Save". It might take a minute for the update to be propagated to your app, but the new values will be reflected when the app re-runs.
-   
-### Support
-Need help? Got a burning question or a spark of genius to share? Just open an issue in this repository.
